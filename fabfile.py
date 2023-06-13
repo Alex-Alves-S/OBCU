@@ -6,7 +6,6 @@ import paramiko
 from scp import SCPClient
 import re
 import invoke.runners as hide
-from invoke import *
 
 
 CMD_SHOW_CONFIG='/opt/tpkg/01_monitrc/bin/showconfig.sh'
