@@ -28,6 +28,7 @@ def getLogsRemoteTrain():
     _getHostLogs(sOBCUHost, 44321, '/opt/log', 'T%s_OBCU_'%(str(trainid),), "%s%s"%(logpath, os.path.sep,), useXZ=True)
 
 def getTrainId(host=G_OBCU["ip"], port=22, dumpvalue=True):
+    
     env.user = 'thalesadmin'
     env.password = 'thales'
     env.hosts = [ host ]
