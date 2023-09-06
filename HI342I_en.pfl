@@ -1,0 +1,1408 @@
+MAIN_SEG
+ version "98.901080.044F"
+ baugruppe "URH200"
+ device "HKL342"
+ devicenumber 52,53,54
+ progcycle 60
+ versiondata 500,28
+ numberdata 500,6
+ logoff 10000,0
+ logon 10000,0
+ genres 10000,0
+ baudrate BR38400
+END_SEG
+
+SET_SEG
+ setwrite 100,0
+END_SEG
+
+PAR_SEG
+; par name,typ,Adr,dim,skal,min,max,nachstellen,off
+
+; Kommunikationsdelays
+ ram_par 200,0
+ default_par 200,0
+ par_write 10000,0
+ par_reset 10000,0
+ par_fix 30000,0
+
+ level "Access level 1",1
+  modul 1,LOGOFF
+   group "Test_ANA",DWORD,10
+    par "KLSP_TFRI",VNUM,5,"°C",0.000015258789,18.00000,25.00000,5,0
+    help "Room temperature-dependent cooling lockout"
+    par "M321_TEST",VNUM,2,"",0.000015258789,-100.00000,260.00000,5,0
+    help "Difference to circulating air position for M321 test mode"
+    par "M322_TEST",VNUM,3,"",0.000015258789,-100.00000,260.00000,5,0
+    help "Difference to circulating air position for M322 test mode"
+    par "TANI_TEST",VNUM,1,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Intake temperature value for test mode"
+    par "TAUS_TEST",VNUM,10,"°C",0.000015258789,-2.00000,60.00000,5,0
+    help "Value of TAUS in test case"
+    par "TEST_LST",VNUM,4,"",0.000015258789,1.00000,3.00000,5,0
+    help "Test fan stages"
+    par "TFRI1_TEST",VNUM,7,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Room temperature value 1 for test mode"
+    par "TFRI2_TEST",VNUM,8,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Room temperature value 2 for test mode"
+    par "TFRS_TEST",VNUM,6,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Room temperature target value for test mode"
+    par "TUMI_TEST",VNUM,9,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Circulating air temperature value for test mode"
+   group "Test_DIG",BYTE,10
+    par "ACFRG_TST",LOG,32
+    help "Value of ACFRG in test mode"
+    par "BFRG_TEST",LOG,33
+    help "Value of BFRG in test mode"
+    par "DRLUFT_TST",LOG,29
+    help "Test parameter for presure switch cond. fan."
+    par "FLRED_SP",LOG,11
+    help "Block fresh air reduction"
+    par "HDLRED_DAK",LOG,13
+    help "Disable high-pressure power reduction"
+    par "HGBYP_TST",LOG,30
+    help "Test parameters for hot gas bypass"
+    par "HKLAUS_TST",LOG,31
+    help "Value HKLAUS in test mode"
+    par "LFSN_AUS",LOG,14
+    help "LIFESIGN OFF"
+    par "LST_TEST",LOG,15
+    help "Test fan stages"
+    par "PRUFFELD",LOG,18
+    help "Test in test field"
+    par "TESTKL",LOG,16
+    help "Cooling test"
+    par "TESTLF",LOG,17
+    help "Ventilation test"
+    par "TEST_BFRG",LOG,10
+    help "Operational release test mode"
+    par "TEST_M32x",LOG,28
+    help "Access level 1"
+    par "TEST_TANI",LOG,19
+    help "Test mode TANI"
+    par "TEST_TAUS",LOG,24
+    help "Test mode for TAUS"
+    par "TEST_TFRI1",LOG,20
+    help "Test mode TFRI1"
+    par "TEST_TFRI2",LOG,21
+    help "Test mode TFRI2"
+    par "TEST_TFRS",LOG,22
+    help "Test mode TFRS"
+    par "TEST_TUMI",LOG,23
+    help "Test mode TUMI"
+    par "TSTLSCH24x",LOG,27
+    help "Test parameter cond. fan"
+    par "TST_ACFRG",LOG,9
+    help "AC release test mode"
+    par "TST_DRLUFT",LOG,25
+    help "Test parameters pressure switch cond. fan"
+    par "TST_HGBYP",LOG,26
+    help "Test parameter hot gas bypass"
+    par "TST_HKLAUS",LOG,12
+    help "Test mode HKLAUS"
+    par "TST_VFRG",LOG,8
+    help ""
+ level "Access level 2",2
+  modul 1,LOGOFF
+   group "ADC",DWORD,10
+    par "KLAPDIF1",VNUM,13,"ADC",0.000015258789,0.00000,260.00000,5,0
+    help "Deviation flaps M32x where fault is triggered after 10 min."
+    par "KPML1CDR1",VNUM,22,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 1 at LST1 HKL D and C"
+    par "KPML1CDR2",VNUM,28,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 2 at LST1 HKL D and C"
+    par "KPML1ER1",VNUM,23,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 1 at LST1 HKL E"
+    par "KPML1ER2",VNUM,29,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 2 at LST1 HKL E"
+    par "KPML1_DC",VNUM,14,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Difference to circu. air stop M32x mixed air position at LST1 HKL D&C "
+    par "KPML1_E",VNUM,15,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Diff. to circulating air stop M32x mixed air position at LST1 HKL E"
+    par "KPML2DCR1",VNUM,24,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 1 at LST2 HKL D and C"
+    par "KPML2DCR2",VNUM,30,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 2 at LST2 HKL D and C"
+    par "KPML2ER1",VNUM,25,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 1 at LST2 HKL E"
+    par "KPML2ER2",VNUM,31,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 2 at LST2 HKL E"
+    par "KPML2_DC",VNUM,16,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Diff. to circulating air stop M32x mixed air position at LST2 HKL D&C "
+    par "KPML2_E",VNUM,17,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Diff. to circulating air stop M32x mixed air position at LST2 HKL E"
+    par "KPML3DCR1",VNUM,26,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 1 at LST3 HKL D and C"
+    par "KPML3DCR2",VNUM,32,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 2 at LST3 HKL D and C"
+    par "KPML3ER1",VNUM,27,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 1 at LST3 HKL E"
+    par "KPML3ER2",VNUM,33,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Fresh air reduction 2 at LST3 HKL E"
+    par "KPML3_DC",VNUM,18,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Diff. to circu. air stop M32x mixed air position at LST3 HKL D&C "
+    par "KPML3_E",VNUM,19,"ADC",0.000015258789,-20.00000,200.00000,5,0
+    help "Diff. to circulating air stop M32x mixed air position at LST3 HKL E"
+    par "KPSW321_MS",VNUM,11,"ADC",0.000015258789,0.00000,260.00000,5,0
+    help ""
+    par "KPSW322_MS",VNUM,12,"ADC",0.000015258789,0.00000,260.00000,5,0
+    help ""
+    par "M32x_FL",VNUM,20,"ADC",0.000015258789,-20.00000,100.00000,5,0
+    help "Difference to circulating air stop M32x position fresh air"
+    par "M32x_INI",VNUM,34,"ADC",0.000015258789,0.00000,260.00000,5,0
+    help "Target value for M32x to determine circulating air position at INI"
+    par "M32x_UL",VNUM,21,"ADC",0.000015258789,-100.00000,100.00000,5,0
+    help "Difference to circulating air stop M32x position circulating air"
+   group "General",DWORD,10
+    par "TAUSIV",VNUM,35,"",0.000015258789,0.00000,200.00000,5,0
+    help "I-amplification TAUS"
+    par "TAUSPV",VNUM,37,"",0.000015258789,1.00000,600.00000,5,0
+    help "P-amplification TAUS"
+    par "TAUSTFRS",VNUM,36,"1/10K",0.000015258789,1.00000,60.00000,5,0
+    help "Correction TAUS due to TFRS (at <> 18°C)"
+   group "Operating system",BYTE,10
+    par "RESETESP",LOG,34
+    help "Reset event log"
+    par "RESETHIST",LOG,35
+    help "Reset histograms"
+   group "Pressure",DWORD,10
+    par "DRHDAUS",VNUM,39,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Temperature limit for DRHD (software-based shutdown)"
+    par "PHD340_ER",VNUM,38,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Actual pressure cooling circuit (high-pressure side) replacement value"
+    par "P_LRED1_A",VNUM,40,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Power reduction ST1 - switch-off threshold"
+    par "P_LRED1_E",VNUM,41,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Power reduction ST1 - switch-on threshold"
+    par "P_LRED2_A",VNUM,42,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Power reduction ST2 - switch-off threshold"
+    par "P_LRED2_E",VNUM,43,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Power reduction ST2 - switch-on threshold"
+    par "P_LRED3_A",VNUM,44,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Power reduction ST3 - switch-off threshold"
+    par "P_LRED3_E",VNUM,45,"bar",0.000015258789,0.00000,40.00000,5,0
+    help "Power reduction ST3 - switch-on threshold"
+   group "Percent",DWORD,10
+    par "GEWTFRI1DF",VNUM,46,"%",0.000015258789,0.00000,100.00000,5,0
+    help "Weighting room temp. sensor 1 KP:ceiling fresh air"
+    par "GEWTFRI1DM",VNUM,47,"%",0.000015258789,0.00000,100.00000,5,0
+    help "Weighting room temp. sensor 1 KP:ceiling mixed air"
+    par "GEWTFRI1DU",VNUM,48,"%",0.000015258789,0.00000,100.00000,5,0
+    help "Weighting room temp. sensor 1 KP:ceiling circulating air"
+    par "GEWTUMIFL",VNUM,49,"%",0.000015258789,0.00000,100.00000,5,0
+    help "Weighting circulating air sensor with fresh air"
+    par "GEWTUMIM",VNUM,50,"%",0.000015258789,0.00000,100.00000,5,0
+    help "Weighting circulating air sensor with mixed air"
+    par "GEWTUMIUL",VNUM,51,"%",0.000015258789,0.00000,100.00000,5,0
+    help "Weighting circulating air sensor with circulating air"
+   group "Temperature",DWORD,10
+    par "BKHY",VNUM,97,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Hysteresis cooling mode"
+    par "BLHY",VNUM,98,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Hysteresis ventilation mode"
+    par "HDTANI",VNUM,96,"°C",0.000015258789,25.00000,55.00000,5,0
+    help "Temperature limit for DRHD"
+    par "LUFTMG1",VNUM,101,"",0.000015258789,1.00000,50.00000,5,0
+    help "Air volume at LST1"
+    par "LUFTMG2",VNUM,102,"",0.000015258789,1.00000,50.00000,5,0
+    help "Air volume at LST2"
+    par "LUFTMG3",VNUM,103,"",0.000015258789,1.00000,50.00000,5,0
+    help "Air volume at LST3"
+    par "TANBYPA",VNUM,126,"°C",0.000015258789,-10.00000,50.00000,5,0
+    help "High outdoor temp. HGBYP Off"
+    par "TANBYPE",VNUM,127,"°C",0.000015258789,-10.00000,50.00000,5,0
+    help "High outdoor temp. HGBYP On"
+    par "TANICMIN",VNUM,104,"°C",0.000015258789,2.00000,20.00000,5,0
+    help "Minimum outside temperature for compressor run"
+    par "TANIKOR1",VNUM,95,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Outside temperature-dependent correction of outside temperature"
+    par "TANIKOR2",VNUM,94,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Outside temperature-dependent correction of outside temperature"
+    par "TANIKOR3",VNUM,93,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Outside temperature-dependent correction of outside temperature"
+    par "TANIKOR4",VNUM,92,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Outside temperature-dependent correction of outside temperature"
+    par "TANIKOR5",VNUM,91,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Outside temperature-dependent correction of outside temperature"
+    par "TANITANIK1",VNUM,56,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of outside temperature"
+    par "TANITANIK2",VNUM,57,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of outside temperature"
+    par "TANITANIK3",VNUM,58,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of outside temperature"
+    par "TANITANIK4",VNUM,59,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of outside temperature"
+    par "TANITANIK5",VNUM,60,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of outside temperature"
+    par "TANITFRIK1",VNUM,61,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of room temperature"
+    par "TANITFRIK2",VNUM,62,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of room temperature"
+    par "TANITFRIK3",VNUM,63,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of room temperature"
+    par "TANITFRIK4",VNUM,64,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of room temperature"
+    par "TANITFRIK5",VNUM,65,"°C",0.000015258789,-40.00000,50.00000,5,0
+    help "Outside temperature ref. point for correction of room temperature"
+    par "TANIVZA",VNUM,54,"°C",0.000015258789,0.00000,35.00000,5,0
+    help "Outside temp. icing counter Off"
+    par "TANIVZE",VNUM,55,"°C",0.000015258789,0.00000,35.00000,5,0
+    help "Outside temp. icing counter On"
+    par "TAUABWI",VNUM,52,"K",0.000015258789,0.10000,15.00000,5,0
+    help "Deviation TAUS to TAUI at which controller is stopped"
+    par "TAUS10",VNUM,112,"°C",0.000015258789,20.00000,60.00000,5,0
+    help "TAUS at TANI of 10°C"
+    par "TAUS15",VNUM,113,"°C",0.000015258789,15.00000,35.00000,5,0
+    help "TAUS at TANI of 15°C"
+    par "TAUS35",VNUM,114,"°C",0.000015258789,3.00000,20.00000,5,0
+    help "TAUS at TANI of 35°C"
+    par "TAUSM20",VNUM,111,"°C",0.000015258789,20.00000,60.00000,5,0
+    help "TAUS at TANI of -20°C"
+    par "TAUSMAX",VNUM,128,"°C",0.000015258789,20.00000,60.00000,5,0
+    help "Maximum exhaust temperature"
+    par "TAUSMIN",VNUM,129,"°C",0.000015258789,1.00000,20.00000,5,0
+    help "Minimum exhaust target temperature"
+    par "TAUSTK",VNUM,53,"°C",0.000015258789,0.00000,20.00000,5,0
+    help "Exhaust target temperature in TESTKUEHL"
+    par "TDC1",VNUM,116,"K",0.000015258789,-5.00000,5.00000,5,0
+    help "Temp.difference hysteresis for cooling demand on"
+    par "TDC2",VNUM,115,"K",0.000015258789,-5.00000,5.00000,5,0
+    help "Temp.difference hysteresis for cooling demand off"
+    par "TFR1KOR1D",VNUM,66,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 1 of room temp. sensor 1"
+    par "TFR1KOR1E",VNUM,67,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 1 of room temp. sensor 1"
+    par "TFR1KOR2D",VNUM,71,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 2 of room temp. sensor 1"
+    par "TFR1KOR2E",VNUM,72,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 2 of room temp. sensor 1"
+    par "TFR1KOR3D",VNUM,76,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 3 of room temp. sensor 1"
+    par "TFR1KOR3E",VNUM,77,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 3 of room temp. sensor 1"
+    par "TFR1KOR4D",VNUM,81,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 4 of room temp. sensor 1"
+    par "TFR1KOR4E",VNUM,82,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 4 of room temp. sensor 1"
+    par "TFR1KOR5D",VNUM,86,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 5 of room temp. sensor 1"
+    par "TFR1KOR5E",VNUM,87,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 5 of room temp. sensor 1"
+    par "TFRI2KOR1",VNUM,68,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 1 of room temp. sensor 2"
+    par "TFRI2KOR2",VNUM,73,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 2 of room temp. sensor 2"
+    par "TFRI2KOR3",VNUM,78,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 3 of room temp. sensor 2"
+    par "TFRI2KOR4",VNUM,83,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 4 of room temp. sensor 2"
+    par "TFRI2KOR5",VNUM,88,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 5 of room temp. sensor 2"
+    par "TFRS1",VNUM,105,"°C",0.000015258789,0.00000,40.00000,5,0
+    help "Room target value P1"
+    par "TFRS2",VNUM,106,"°C",0.000015258789,0.00000,40.00000,5,0
+    help "Room target value P2"
+    par "TFRS3",VNUM,107,"°C",0.000015258789,0.00000,40.00000,5,0
+    help "Room target value P3"
+    par "TFRS4",VNUM,108,"°C",0.000015258789,0.00000,40.00000,5,0
+    help "Room target value P4"
+    par "TFRS5",VNUM,109,"°C",0.000015258789,0.00000,40.00000,5,0
+    help "Room target value P5"
+    par "TFRS_OFF",VNUM,110,"K",0.000015258789,-2.00000,2.00000,5,0
+    help "Room temperature target curve offset"
+    par "TKUEHLSP",VNUM,118,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Temperature cooling lockout"
+    par "TLUEFTSP",VNUM,119,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Temperature block ventilation mode"
+    par "TUMIKOR1D",VNUM,69,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 1 of circulating air temp."
+    par "TUMIKOR1E",VNUM,70,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 1 of circulating air temp."
+    par "TUMIKOR2D",VNUM,74,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 2 of circulating air temp."
+    par "TUMIKOR2E",VNUM,75,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 2 of circulating air temp."
+    par "TUMIKOR3D",VNUM,79,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 3 of circulating air temp."
+    par "TUMIKOR3E",VNUM,80,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 3 of circulating air temp."
+    par "TUMIKOR4D",VNUM,84,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 4 of circulating air temp."
+    par "TUMIKOR4E",VNUM,85,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 4 of circulating air temp."
+    par "TUMIKOR5D",VNUM,89,"D",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 5 of circulating air temp."
+    par "TUMIKOR5E",VNUM,90,"K",0.000015258789,-10.00000,10.00000,5,0
+    help "Temperature-dependent correction 5 of circulating air temp."
+    par "TVDBYPA",VNUM,122,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Evaporator temperature icing HGBYP Off"
+    par "TVDBYPE",VNUM,123,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Evaporator temperature icing HGBYP On"
+    par "TVDEISA",VNUM,120,"°C",0.000015258789,-8.00000,12.00000,5,0
+    help "Evaporator temperature icing Off"
+    par "TVDEISE",VNUM,121,"°C",0.000015258789,-10.00000,10.00000,5,0
+    help "Evaporator temperature icing On"
+    par "TVDI1KORR",VNUM,99,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Correction value for evaporator temperature"
+    par "TVDI2KORR",VNUM,100,"°C",0.000015258789,-30.00000,50.00000,5,0
+    help "Correction value for evaporator temperature"
+    par "VKL_AUS",VNUM,117,"K",0.000015258789,0.00000,10.00000,5,0
+    help "Temperature difference precooling OFF"
+    par "ZCSTW",VNUM,124,"s",0.000015258789,10.00000,360.00000,5,0
+    help "Time compressor stage change short"
+    par "ZTAUDIFF",VNUM,125,"s",0.000015258789,30.00000,300.00000,5,0
+    help "Time parameter fan control"
+   group "Time",DWORD,10
+    par "BKNL",VNUM,132,"s",0.000015258789,0.00000,600.00000,5,0
+    help "Cooling mode"
+    par "BLNL",VNUM,133,"s",0.000015258789,0.00000,600.00000,5,0
+    help "Ventilation mode after-run"
+    par "HD_Z_CAUS",VNUM,143,"s",0.000015258789,0.00000,3600.00000,5,0
+    help "Time to compressor shutdown due to HD"
+    par "HD_Z_CEIN",VNUM,144,"s",0.000015258789,0.00000,3600.00000,5,0
+    help "Time to compressor startup after HD shutdown"
+    par "LRED1_Z",VNUM,150,"s",0.000015258789,0.00000,500.00000,5,0
+    help "Minimum switch-off time LRED1"
+    par "LRED2_Z",VNUM,151,"s",0.000015258789,0.00000,500.00000,5,0
+    help "Minimum switch-off time LRED2"
+    par "LRED3_Z",VNUM,152,"s",0.000015258789,0.00000,500.00000,5,0
+    help "Minimum switch-off time LRED3"
+    par "RES_DRHD",VNUM,145,"s",0.000015258789,600.00000,3200.00000,5,0
+    help "Time to reset the DRHD counter"
+    par "RES_DRSG",VNUM,146,"s",0.000015258789,600.00000,3200.00000,5,0
+    help "Time to reset the DRSG counter"
+    par "RES_VDEIS",VNUM,131,"s",0.000015258789,600.00000,3600.00000,5,0
+    help "Startup for reset counter for VDEIS"
+    par "SGDR_AUS",VNUM,139,"s",0.000015258789,0.00000,10.00000,5,0
+    help "Fault suction pressure switch OFF"
+    par "SGDR_EIN",VNUM,140,"s",0.000015258789,0.00000,10.00000,5,0
+    help "Fault suction pressure switch ON"
+    par "T_AC1NLMAX",VNUM,141,"s",0.000015258789,5.00000,600.00000,5,0
+    help "Time AC release 1 run delay"
+    par "T_ACVZ",VNUM,130,"s",0.000015258789,0.00000,60.00000,5,0
+    help ""
+    par "T_LSTART",VNUM,142,"s",0.000015258789,0.00000,180.00000,5,0
+    help "Time fan start (high speed)"
+    par "ZCAUS",VNUM,135,"s",0.000015258789,20.00000,600.00000,5,0
+    help "Minimum switch-off time compressor"
+    par "ZCEIN",VNUM,136,"s",0.000015258789,0.00000,600.00000,5,0
+    help "Minimum run time compressor"
+    par "ZCZYK",VNUM,138,"s",0.000015258789,100.00000,600.00000,5,0
+    help "Minimum cycle time for compressor On/Off"
+    par "ZHGBYPA",VNUM,134,"s",0.000015258789,0.00000,600.00000,5,0
+    help "Minimum switch-off time for hot gas bypass"
+    par "ZHGBYPE",VNUM,137,"s",0.000015258789,0.00000,600.00000,5,0
+    help "Minimum switch-on time HG bypass"
+    par "ZHGBYPZ",VNUM,148,"s",0.000015258789,0.00000,600.00000,5,0
+    help "Cycle time for hot gas bypass On/Off"
+    par "ZIZYKL",VNUM,149,"s",0.000015258789,0.00000,120.00000,5,0
+    help "Cycle time for room-I-controller"
+    par "ZSTOPI",VNUM,147,"s",0.000015258789,5.00000,300.00000,5,0
+    help "Time after which I-controller automatically stops with TAU deviation"
+END_SEG
+
+ANZ_SEG
+ anzdata 500,243
+ var "Zykluszähler",NUM,WORD,0,$FFFF,"",1,0,65535,0,0
+ help "Program cycle counter"
+ var "Geräte_Status",HEX,WORD,2,$FFFF,"",1,0,$FFFF,0,0
+ help "Device status"
+ var "LOGIK_EIN",NUM,BYTE,4,$FF,"",1,0,255,0,0
+ help "Logic is switched on"
+ var "xACFRG290",LOG,BYTE,7,$20
+ help "Phase monitoring A290 OK HW"
+ var "xCMSCH370",LOG,BYTE,7,$01
+ help "Feedback compressor motor contactor F370"
+ var "xCSCHR270",LOG,BYTE,6,$20
+ help "Feedback compressor contactor K270"
+ var "xDRHD",LOG,BYTE,7,$08
+ help "Pressure switch high-pressure"
+ var "xDROK",LOG,BYTE,7,$04
+ help "Pressure OK"
+ var "xDRSG",LOG,BYTE,7,$02
+ help "Pressure switch low-pressure"
+ var "xHKLAUS_HW",LOG,BYTE,6,$10
+ help "AC OFF HW low active"
+ var "xKR320",LOG,BYTE,8,$20
+ help "Coupling relay K320 feedback"
+ var "xKR380",LOG,BYTE,7,$10
+ help "Coupling relay K380 feedback"
+ var "xLMSCH220",LOG,BYTE,8,$08
+ help "Motor contactor M220"
+ var "xLMSCH24x",LOG,BYTE,8,$80
+ help "Feedback cond. fan motor contactor M241 and M242"
+ var "xLSCHR220",LOG,BYTE,7,$40
+ help "Fan contactor feedback K220"
+ var "xLSCHR222",LOG,BYTE,8,$40
+ help "Feedback supply air fan contactor K222"
+ var "xLSCHR223",LOG,BYTE,7,$80
+ help "Feedback supply air fan contactor K223"
+ var "xLSCHR241",LOG,BYTE,6,$04
+ help "Feedback cond. fan contactor K241"
+ var "xLSCHR242",LOG,BYTE,6,$08
+ help "Feedback cond. fan contactor K242"
+ var "xRF220",LOG,BYTE,8,$02
+ help "Feedback circuit breaker F220"
+ var "xRF240",LOG,BYTE,6,$40
+ help "Feedback circuit breaker F240 "
+ var "xRF270",LOG,BYTE,6,$80
+ help "Feedback circuit breaker F270 "
+ var "xTSCH220",LOG,BYTE,8,$10
+ help "Transformer contactor T220 overtemperature"
+ var "yCSCHA270",LOG,BYTE,9,$40
+ help "Control compressor contactor K270"
+ var "yCSCHA270_",LOG,BYTE,10,$02
+ help "Control compressor contactor K270"
+ var "yFRITTHW",LOG,BYTE,12,$04
+ help ""
+ var "yHGBYP",LOG,BYTE,10,$40
+ help "Control hot gas bypass Y5"
+ var "yLEDGELB1",LOG,BYTE,11,$80
+ help ""
+ var "yLEDGRUEN",LOG,BYTE,11,$40
+ help ""
+ var "yLSCHA220",LOG,BYTE,10,$20
+ help "Control fan contactor K220"
+ var "yLSCHA222",LOG,BYTE,10,$01
+ help "Control fan contactor K222"
+ var "yLSCHA223",LOG,BYTE,9,$80
+ help "Control fan contactor K223"
+ var "yLSCHA241",LOG,BYTE,11,$02
+ help "Control condenser fan contactor K241"
+ var "yLSCHA242",LOG,BYTE,11,$08
+ help "Control condenser fan contactor K242"
+ var "yMVA",LOG,BYTE,10,$80
+ help "Control solenoid valve liquid line Y1"
+ var "yPHDI340_V",LOG,BYTE,10,$10
+ help "Control pressure transducers"
+ var "x12V_REV",VNUM,WORD,39,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Reference voltage 12V internal"
+ var "x5V_int",VNUM,WORD,33,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help ""
+ var "xKPRM321",VNUM,WORD,41,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Feedback fresh/circulating air flap M321"
+ var "xKPRM322",VNUM,WORD,45,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Feedback fresh/circulating air flap M322"
+ var "xPHDI340H",VNUM,WORD,43,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Actual pressure cooling circuit (high-pressure side) "
+ var "xTANI330",VNUM,WORD,25,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Intake temperature sensor B330"
+ var "xTAUI310",VNUM,WORD,27,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Exhaust temperature sensor B310"
+ var "xTFRI1",VNUM,WORD,31,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Exit air temperature sensor 1 external"
+ var "xTFRI2",VNUM,WORD,29,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Exit air temperature sensor 2 external"
+ var "xTUMI385",VNUM,WORD,19,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Circulating air temperature sensor B385"
+ var "xTVDI371",VNUM,WORD,23,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Evaporator temperature sensor B371"
+ var "xTVDI372",VNUM,WORD,21,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Evaporator temperature sensor B372"
+ var "xURHTEMP",VNUM,WORD,35,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Temperature URH internal"
+ var "yKPSW321",VNUM,WORD,55,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Target value fresh/circulating air flap M321"
+ var "yKPSW322",VNUM,WORD,51,$FFFF,"",1.0000000000e+000,-32767.00000,32767.00000,2,0
+ help "Target value fresh/circulating air flap M322"
+ var "ACFRG",LOG,BYTE,74,$20
+ help "AC voltage release"
+ var "ACFRG290",LOG,BYTE,89,$01
+ help "Phase monitoring A290"
+ var "ACFRG290_HW",LOG,BYTE,94,$20
+ help "Phase monitoring A290 HW signal"
+ var "ACFRGVZ",LOG,BYTE,74,$40
+ help "AC voltage release including after-run"
+ var "ACFRG_C",LOG,BYTE,75,$80
+ help "Release AC voltage"
+ var "AC_NOK",LOG,BYTE,94,$80
+ help "AC voltage not OK, difference between HW and bus signal"
+ var "BAUTO",LOG,BYTE,75,$10
+ help "Mode: Automatic"
+ var "BFRG",LOG,BYTE,74,$80
+ help "HVAC operating release"
+ var "BKUEHL",LOG,BYTE,77,$10
+ help "Cooling mode"
+ var "BKUEHLA",LOG,BYTE,76,$80
+ help "Cooling mode OFF"
+ var "BKUEHLE",LOG,BYTE,77,$04
+ help "Cooling mode ON"
+ var "BLUEFT",LOG,BYTE,77,$40
+ help "Ventilation mode"
+ var "BLUEFTA",LOG,BYTE,77,$01
+ help "Ventilation mode OFF"
+ var "BLUEFTE",LOG,BYTE,76,$40
+ help "Ventilation mode ON"
+ var "BNU_HALTEN",LOG,BYTE,75,$02
+ help "Keep boardnet voltage"
+ var "BSTANDBY",LOG,BYTE,75,$08
+ help "Mode: Standby"
+ var "BUS_OFF",LOG,BYTE,87,$20
+ help "CAN bus offline"
+ var "CANF",LOG,BYTE,81,$02
+ help "Compressor request"
+ var "CAN_STAT_OK",LOG,BYTE,76,$02
+ help ""
+ var "CAUS",LOG,BYTE,81,$08
+ help "Compressor Off"
+ var "CMSCH370",LOG,BYTE,91,$20
+ help "Motor contactor compressor F370"
+ var "CSCHA270",LOG,BYTE,88,$02
+ help "Compressor contactor control K270"
+ var "CSCHA_1",LOG,BYTE,82,$40
+ help "Compressor contactor control (cache)"
+ var "CSCHR270",LOG,BYTE,91,$10
+ help "Feedback compressor contactor K270"
+ var "CSPZAUS",LOG,BYTE,82,$10
+ help "Compressor lockout due to minimum switch-off time"
+ var "CSPZEIN",LOG,BYTE,82,$20
+ help "Compressor lockout due to minimum switch-on time"
+ var "CSPZYK",LOG,BYTE,82,$08
+ help "Compressor switch-on lock due to minimum cycle time "
+ var "DRHD",LOG,BYTE,87,$01
+ help "High-pressure - pressure switch F372"
+ var "DRHD_RED",LOG,BYTE,80,$08
+ help "High-pressure reduction"
+ var "DROK",LOG,BYTE,91,$40
+ help "Pressure OK - pressure switch F371"
+ var "DRSG",LOG,BYTE,91,$80
+ help "Under-pressure - pressure switch F372"
+ var "DRSG_PD",LOG,BYTE,85,$10
+ help "Suction pressure switch in pumpdown mode"
+ var "FFR",LOG,BYTE,75,$01
+ help "Reset flip-flop"
+ var "FKLF_C",LOG,BYTE,92,$02
+ help "CAN: Release passenger air conditioner including load release"
+ var "FKLKU_C",LOG,BYTE,92,$01
+ help "CAN: Release cooling passenger compartment"
+ var "FL_RED1",LOG,BYTE,89,$20
+ help "Fresh air reduction stage 1"
+ var "FL_RED2",LOG,BYTE,83,$80
+ help "Fresh air reduction stage 2"
+ var "FRISCHL",LOG,BYTE,93,$01
+ help "Flap position M321&M322: fresh air"
+ var "FRITTHW",LOG,BYTE,88,$40
+ help "Contact fritting activated"
+ var "FVKLF_C",LOG,BYTE,93,$80
+ help "CAN: Compressor switch-on release"
+ var "HD_CAUS",LOG,BYTE,83,$10
+ help "Compressor shut-off due to long time in HD_LRED"
+ var "HD_LRED1",LOG,BYTE,83,$02
+ help "High-pressure cooling capacity reduction stage 1"
+ var "HD_LRED2",LOG,BYTE,83,$04
+ help "High-pressure cooling capacity reduction stage 2"
+ var "HD_LRED3",LOG,BYTE,83,$08
+ help "High-pressure cooling capacity reduction stage 3"
+ var "HGBYP",LOG,BYTE,82,$04
+ help "Hot gas bypass"
+ var "HGBYPANF",LOG,BYTE,81,$04
+ help "Hot gas bypass request"
+ var "HGSPZAUS",LOG,BYTE,82,$02
+ help "Hot gas bypass timeout due to minimum switch-off time"
+ var "HGSPZEIN",LOG,BYTE,81,$80
+ help "Hot gas bypass timeout due to minimum switch-on time"
+ var "HGSPZYK",LOG,BYTE,82,$01
+ help "Hot gas bypass timeout due to minimal cycle time "
+ var "HKLAUS_C",LOG,BYTE,93,$20
+ help "CAN: HKLAUS"
+ var "HKLAUS_HW",LOG,BYTE,86,$20
+ help "HVAC OFF hardware (low active)"
+ var "KAOK",LOG,BYTE,90,$80
+ help "HVAC OK"
+ var "KBED",LOG,BYTE,85,$80
+ help "Cooling demand"
+ var "KLIMAAUS",LOG,BYTE,75,$20
+ help "Air condition Off"
+ var "KLIMAEIN",LOG,BYTE,75,$40
+ help "Air condition On"
+ var "KP32x_INI",LOG,BYTE,74,$02
+ help "Flap position M321&M322 initialization"
+ var "KR320",LOG,BYTE,89,$08
+ help "Feedback coupling relay K320 "
+ var "KR380",LOG,BYTE,89,$04
+ help "Feedback coupling relay K380 "
+ var "KUEHLSP",LOG,BYTE,76,$10
+ help "Cooling lockout "
+ var "KUEHLSP_TF",LOG,BYTE,86,$08
+ help "Cooling lockout TFRI_MW"
+ var "LAUS",LOG,BYTE,79,$80
+ help "Fan Off M220"
+ var "LFKA",LOG,BYTE,86,$02
+ help "Minor error"
+ var "LIFESIGN_OK",LOG,BYTE,94,$08
+ help "Life sign active"
+ var "LMSCH220",LOG,BYTE,90,$01
+ help "Feedback from motor contactor M220"
+ var "LMSCH240",LOG,BYTE,91,$02
+ help "Feedback cond. fan motor contactor M240"
+ var "LSCHA220",LOG,BYTE,80,$80
+ help "Fan contactor control K220"
+ var "LSCHA222",LOG,BYTE,77,$08
+ help "Fan contactor control K222"
+ var "LSCHA223",LOG,BYTE,77,$20
+ help "Fan contactor control K223"
+ var "LSCHA241",LOG,BYTE,81,$20
+ help "Condenser fan contactor control K241 "
+ var "LSCHA242",LOG,BYTE,81,$40
+ help "Condenser fan contactor control K242"
+ var "LSCHR220",LOG,BYTE,90,$02
+ help "Feedback supply air fan contactor K220"
+ var "LSCHR221_2_3",LOG,BYTE,80,$02
+ help "Fan M220 running"
+ var "LSCHR222",LOG,BYTE,90,$08
+ help "Feedback supply air fan contactor K222"
+ var "LSCHR223",LOG,BYTE,90,$10
+ help "Feedback supply air fan contactor K223"
+ var "LSCHR241",LOG,BYTE,87,$04
+ help "Feedback condenser fan contactor K241"
+ var "LSCHR242",LOG,BYTE,87,$08
+ help "Feedback condenser fan contactor K242"
+ var "LST1",LOG,BYTE,92,$20
+ help "Fan stage 1 active"
+ var "LST1K",LOG,BYTE,80,$01
+ help "1st fan stages in cooling"
+ var "LST1L",LOG,BYTE,76,$04
+ help "1st fan stage in ventilation"
+ var "LST1_AUTO",LOG,BYTE,92,$04
+ help "Automatic: Fan stage 1"
+ var "LST2",LOG,BYTE,92,$40
+ help "Fan stage 2 active"
+ var "LST2K",LOG,BYTE,80,$40
+ help "2 fan stages in cooling"
+ var "LST2L",LOG,BYTE,89,$40
+ help "2 fan stages in ventilation"
+ var "LST2_AUTO",LOG,BYTE,92,$08
+ help "Automatic: Fan stage 2"
+ var "LST3",LOG,BYTE,92,$80
+ help "Fan stage 3 active"
+ var "LST3K",LOG,BYTE,80,$20
+ help "3rd fan stages in cooling"
+ var "LST3L",LOG,BYTE,90,$04
+ help "3rd fan stages in ventilation"
+ var "LST3_AUTO",LOG,BYTE,92,$10
+ help "Automatic: Fan stage 3"
+ var "LST_SPERRE",LOG,BYTE,93,$40
+ help "Block change fan stage"
+ var "LUEFTSP",LOG,BYTE,76,$20
+ help "Fan lockout "
+ var "M321_LAUF",LOG,BYTE,88,$10
+ help "Flaps M321 are moving"
+ var "M322_LAUF",LOG,BYTE,88,$20
+ help "Flaps M322 are moving"
+ var "MEZ_NOK",LOG,BYTE,94,$10
+ help "Compressor lockout due to not observed minimum switch-on time"
+ var "MFKA",LOG,BYTE,94,$04
+ help "Moderate error"
+ var "MFREIW01",LOG,BYTE,87,$10
+ help "CAN bus master release"
+ var "MISCHLST1",LOG,BYTE,88,$04
+ help "Flap position M321&M322: mixed air position for fan stage 1"
+ var "MISCHLST2",LOG,BYTE,93,$02
+ help "Flap position M321&M322: mixed air position for fan stage 2"
+ var "MISCHLST3",LOG,BYTE,93,$04
+ help "Flap position M321&M322: mixed air position for fan stage 3"
+ var "MVA",LOG,BYTE,82,$80
+ help "Solenoid valve liquid line On"
+ var "ONTx_C",LOG,BYTE,87,$40
+ help "CAN: Bus participant x online"
+ var "ONTy_C",LOG,BYTE,87,$80
+ help "CAN: Bus participant y online"
+ var "PRUFFELD",LOG,BYTE,74,$10
+ help "Test field mode active (isolated operation)"
+ var "PUMPDOWN",LOG,BYTE,88,$01
+ help "Compressor pumpdown mode active"
+ var "REGIAKT",LOG,BYTE,78,$02
+ help "Exhaust temp. target value: "I-controller active"
+ var "REGIRES",LOG,BYTE,77,$80
+ help "Exhaust temp. target value: I-controller reset"
+ var "RF220",LOG,BYTE,86,$40
+ help "Feedback circuit breaker F220 "
+ var "RF240",LOG,BYTE,91,$08
+ help "Feedback circuit breaker F240 "
+ var "RF270",LOG,BYTE,89,$10
+ help "Feedback circuit breaker F270 "
+ var "SA290",LOG,BYTE,94,$40
+ help "Fault Phase monitoring A290"
+ var "SABS_C",LOG,BYTE,94,$02
+ help "CAN: Lower pantograph"
+ var "SDRHD",LOG,BYTE,85,$02
+ help "Fault high-pressure switch"
+ var "SDRSG",LOG,BYTE,85,$08
+ help "Fault suction pressure switch "
+ var "SFKA",LOG,BYTE,86,$10
+ help "Severe error"
+ var "SGA290",LOG,BYTE,95,$01
+ help "Fault stored Phase monitoring A290"
+ var "SGCMSCH370",LOG,BYTE,84,$08
+ help "Fault stored compressor motor contactor F370"
+ var "SGCSCH270",LOG,BYTE,84,$20
+ help "Fault stored compressor contactor K270"
+ var "SGDRHD",LOG,BYTE,85,$04
+ help "Fault stored high-pressure switch"
+ var "SGDRSG",LOG,BYTE,85,$20
+ help "Fault stored suction pressure switch"
+ var "SGF220",LOG,BYTE,85,$01
+ help "Fault stored circuit breaker F220"
+ var "SGF240",LOG,BYTE,84,$10
+ help "Fault stored cond. fan machine F240"
+ var "SGF270",LOG,BYTE,89,$80
+ help "Fault stored compressor machine F270"
+ var "SGF371",LOG,BYTE,76,$08
+ help "Fault stored pressure switch F371"
+ var "SGK320",LOG,BYTE,81,$10
+ help "Fault stored coupling relay K320 "
+ var "SGK380",LOG,BYTE,76,$01
+ help "Fault stored coupling relay K380"
+ var "SGKAELTE",LOG,BYTE,85,$40
+ help "Fault stored cooling circuit"
+ var "SGKP321",LOG,BYTE,93,$08
+ help "Fault stored flap M321"
+ var "SGKP322",LOG,BYTE,91,$04
+ help "Fault stored flap M322"
+ var "SGLMSCH220",LOG,BYTE,79,$04
+ help "Fault stored fan motor overload M220"
+ var "SGLMSCH240",LOG,BYTE,84,$04
+ help "Fault stored cond. fan motor contactor M240"
+ var "SGLSCH220",LOG,BYTE,79,$08
+ help "Fault stored fan contactor K220"
+ var "SGLSCH222",LOG,BYTE,79,$20
+ help "Fault stored fan contactor K222"
+ var "SGLSCH223",LOG,BYTE,79,$40
+ help "Fault stored fan contactor K223"
+ var "SGLSCH241",LOG,BYTE,84,$80
+ help "Fault stored cond. fan contactor K241"
+ var "SGLSCH242",LOG,BYTE,84,$40
+ help "Fault stored cond. fan contactor K242"
+ var "SGPHDI340",LOG,BYTE,83,$01
+ help "Fault pressure sensor actual value cooling circuit"
+ var "SGTANI330",LOG,BYTE,78,$08
+ help "Fault outside temperature sensor B330"
+ var "SGTAUI310",LOG,BYTE,78,$80
+ help "Fault exhaust temperature sensor B310"
+ var "SGTFRI1",LOG,BYTE,78,$40
+ help "Fault exit air temperature sensor 1 external"
+ var "SGTFRI2",LOG,BYTE,80,$04
+ help "Fault exit air temperature sensor 2 external"
+ var "SGTSCH220",LOG,BYTE,79,$02
+ help "Fault stored overtemperature transformer T220"
+ var "SGTUMI385",LOG,BYTE,78,$20
+ help "Fault circulating air temperature sensor B385"
+ var "SGTVDI371",LOG,BYTE,79,$01
+ help "Fault stored evaporator temperature sensor B371"
+ var "SGTVDI372",LOG,BYTE,79,$10
+ help "Fault stored evaporator temperature sensor B373"
+ var "SGVDEIS",LOG,BYTE,83,$40
+ help "Fault stored evaporator icing"
+ var "SLMSCH220",LOG,BYTE,81,$01
+ help "Fault fan motor contactor 220"
+ var "SLMSCH240",LOG,BYTE,84,$02
+ help "Fault cond. fan motor contactor M240"
+ var "SPKTANI",LOG,BYTE,84,$01
+ help "Cooling lockout due to outside temperature"
+ var "STOPDOWNI",LOG,BYTE,78,$01
+ help "Exhaust temp. target value: I-controller stop down"
+ var "STOPUPI",LOG,BYTE,78,$04
+ help "Exhaust temp. target value: I-controller stop up"
+ var "STSCH220",LOG,BYTE,86,$04
+ help "Fault overtemperature transformer 220"
+ var "TANIOK",LOG,BYTE,78,$10
+ help "Outside temperature reading valid"
+ var "TANIOKx_C",LOG,BYTE,90,$20
+ help "CAN: Intake temp. actual value BTNx is valid"
+ var "TANIOKy_C",LOG,BYTE,90,$40
+ help "CAN: Intake temp. actual value BTNy is valid"
+ var "TAUI_DIFF2",LOG,BYTE,86,$01
+ help "Fan stage 2 not accessible"
+ var "TAUI_DIFF3",LOG,BYTE,87,$02
+ help "Fan stage 3 not accessible"
+ var "TESTKL",LOG,BYTE,74,$04
+ help "Cooling test active"
+ var "TESTKL_C",LOG,BYTE,93,$10
+ help "CAN: Test mode cooling"
+ var "TESTLF",LOG,BYTE,74,$08
+ help "Ventilation test active"
+ var "TEST_MOD",LOG,BYTE,74,$01
+ help "Test mode active"
+ var "TSCH220",LOG,BYTE,86,$80
+ help "Transformer contactor T220 (overtemperature)"
+ var "TZO_C",LOG,BYTE,91,$01
+ help "CAN: Central doors open"
+ var "UML",LOG,BYTE,88,$08
+ help "Flap position M321&M322: circulating air"
+ var "VDEIS",LOG,BYTE,83,$20
+ help "Warning: Icing of evaporator"
+ var "VKAUSKLF_C",LOG,BYTE,89,$02
+ help "CAN: Precooling OFF"
+ var "VKL",LOG,BYTE,80,$10
+ help "Precooling mode active"
+ var "VORL",LOG,BYTE,75,$04
+ help "Pre-ventilation active"
+ var "WARTUNG",LOG,BYTE,88,$80
+ help "Maintenance"
+ var "WASCHOK",LOG,BYTE,77,$02
+ help "Washing run OK"
+ var "WASCH_C",LOG,BYTE,94,$01
+ help "CAN: Request washing run"
+ var "BELAD_C",VNUM,WORD,187,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help "CAN: loading level"
+ var "KPRM321",VNUM,WORD,176,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Feedback fresh/circulating air flap M321"
+ var "KPRM322",VNUM,WORD,178,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Feedback fresh/circulating air flap M322"
+ var "KPSW321",VNUM,WORD,172,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Target value fresh/circulating air flaps M321"
+ var "KPSW322",VNUM,WORD,174,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Target value fresh/circulating air flaps M322"
+ var "KPSW_DIFF",VNUM,WORD,180,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "MS_KPRM321",VNUM,WORD,212,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "MS_KPRM322",VNUM,WORD,214,$FFFF,"ADC",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "MS_RES_1",VNUM,WORD,208,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help "Not used"
+ var "MS_RES_2",VNUM,WORD,210,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help "Not used"
+ var "MS_TANI330",VNUM,WORD,196,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help ""
+ var "MS_TAUI310",VNUM,WORD,198,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help ""
+ var "MS_TFRI1",VNUM,WORD,204,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help ""
+ var "MS_TFRI2",VNUM,WORD,200,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help ""
+ var "MS_TUMI",VNUM,WORD,202,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help ""
+ var "MS_TVDI371",VNUM,WORD,194,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help ""
+ var "MS_TVDI372",VNUM,WORD,206,$FFFF,"°C",1.0000000000e+000,-32767.00000,32767.00000,4,0
+ help ""
+ var "PHDI340",VNUM,WORD,185,$FFFF,"bar",9.9999997765e-003,0.00000,100.00000,4,0
+ help "Pressure sensor actual value cooling circuit (high-pressure side)"
+ var "TANI330",VNUM,WORD,154,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Outside temperature sensor B330 actual value"
+ var "TANI330NK",VNUM,WORD,191,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Outside temperature sensor B330 actual value not corrected"
+ var "TAUI310",VNUM,WORD,150,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Exhaust sensor B310 actual value"
+ var "TAUS",VNUM,WORD,152,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Exhaust temperature target value"
+ var "TDVKL_C",VNUM,WORD,189,$FFFF,"K",1.0000000000e+000,-127.00000,128.00000,4,0
+ help "CAN: precooling temperature difference"
+ var "TFRI1",VNUM,WORD,156,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Room temperature sensor 1 external actual value"
+ var "TFRI2",VNUM,WORD,158,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Room temperature sensor 2 external actual value"
+ var "TUMI385",VNUM,WORD,160,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Circulating air sensor B385 actual value"
+ var "TVDI371",VNUM,WORD,162,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Evaporator sensor B371 actual value"
+ var "TVDI372",VNUM,WORD,164,$FFFF,"°C",9.9999997765e-003,-45.00000,130.00000,4,0
+ help "Evaporator sensor B372 actual value"
+ var "BTN",VNUM,BYTE,65,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "number of bus participant"
+ var "CAN_JAH",VNUM,BYTE,73,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "CAN_MIN",VNUM,BYTE,69,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "CAN_MON",VNUM,BYTE,72,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "CAN_SEK",VNUM,BYTE,70,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "CAN_STD",VNUM,BYTE,68,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "CAN_TAG",VNUM,BYTE,71,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "GEWTFRI1",VNUM,BYTE,182,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Weighting room sensor 1"
+ var "GEWTFRI2",VNUM,BYTE,184,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Weighting room sensor 2"
+ var "GEWTUMI",VNUM,BYTE,183,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Weighting circulating air sensor acc. to fresh/circulating air ratio"
+ var "GerätStat",VNUM,BYTE,67,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Current device status"
+ var "MEZ_ANZ",VNUM,BYTE,193,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help ""
+ var "NodeStat",VNUM,BYTE,66,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "CANopen - state "
+ var "SDRHD_X",VNUM,BYTE,168,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Number of high-pressure releases"
+ var "SDRSG_X",VNUM,BYTE,169,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Number of low-pressure releases"
+ var "SLMSCH220X",VNUM,BYTE,166,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Number of fan motor contactor faults"
+ var "SLMSCH24_X",VNUM,BYTE,171,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Number of motor contactor faults cond. fan M240"
+ var "STSCH220_X",VNUM,BYTE,167,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Number of overtemperature contactor transformer 220 faults"
+ var "VDEISX",VNUM,BYTE,170,$FF,"",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Number of icings"
+ var "VERSB",VNUM,BYTE,96,$FF,"ascii",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Software version letter"
+ var "VERSZ",VNUM,BYTE,97,$FF,"dez",1.0000000000e+000,0.00000,255.00000,4,0
+ help "Software version number"
+ var "KTAUSI",VNUM,DWORD,134,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Correction TAUS, I-component room controller"
+ var "KTAUSNOV",VNUM,DWORD,146,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Correction TAUS, I-component room controller in NOVRAM"
+ var "KTAUSP",VNUM,DWORD,138,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Correction TAUS, P-component room controller"
+ var "KTAUSTFRS",VNUM,DWORD,142,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Correction TAUS due to TFRS"
+ var "TANI_MW",VNUM,DWORD,110,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Outside temperature sensor average value"
+ var "TANIx_C",VNUM,DWORD,126,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "CAN: Outside temperature sensor BTNx"
+ var "TANIy_C",VNUM,DWORD,130,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "CAN: Outside temperature sensor BTNy"
+ var "TAUS_LST1",VNUM,DWORD,98,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Exhaust temperature target value in LST1"
+ var "TAUS_LST2",VNUM,DWORD,102,$FFFFFFFF,"°C",1.5258789063e-005,-200.00000,200.00000,4,0
+ help "Target exhaust temp. fan stage 2"
+ var "TAUS_LST3",VNUM,DWORD,106,$FFFFFFFF,"°C",1.5258789063e-005,-200.00000,200.00000,4,0
+ help "Target exhaust temp. fan stage 3"
+ var "TFRDIFF",VNUM,DWORD,122,$FFFFFFFF,"K",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Room temperature target/actual difference"
+ var "TFRI_MW",VNUM,DWORD,114,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Room temperature average"
+ var "TFRS",VNUM,DWORD,118,$FFFFFFFF,"°C",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help "Room temperature target value"
+END_SEG
+
+ANA_SEG
+ trigdata 100,46
+ trigwrite 100,46
+ trigset 100,0
+ trigreset 100,0
+ anadata 100,243
+END_SEG
+
+ESP_SEG
+ espdata 200,209
+ espdel 200,0
+ espcounter "On"
+
+ ;Interne Ereignisse
+ ereig "Operating system error : Division by zero",1
+ ereig "Operating system error : Watchdog",4
+ ereig "Operating system error : Timeout",6
+ ereig "Operating system error : Undervoltage",7
+ ereig "Operating system error : Power supply fault",8
+
+ ;Projektereignisse
+ ereig "MEZ_NOK - Compressor lockout: 3x minimum switch-on time was not observed",10
+ ereig "SGA290 - Fault stored Phase monitoring A290",24
+ ereig "SGCMSCH370 - Fault compressor motor contactor F370",33
+ ereig "SGCSCH270 - Fault compressor contactor K270",34
+ ereig "SGDRHD - Fault high-pressure",35
+ ereig "SGDRSG - Fault low-pressure",36
+ ereig "SGF220 - Fault circuit breaker F220",21
+ ereig "SGF240 - Fault machine cond. fan F240",25
+ ereig "SGF270 - Fault machine compressor F270",30
+ ereig "SGF371 - Fault stored pressure switch F371",39
+ ereig "SGK320 - Fault stored coupling relay K320 ",27
+ ereig "SGKAELTE - Fault cooling circuit",38
+ ereig "SGKP321 - Fault stored flap M321",28
+ ereig "SGKP322 - Fault stored flap M322",29
+ ereig "SGLMSCH220 - Fault fan motor protection M220",18
+ ereig "SGLMSCH24x - Fault motor contactor condenser fan M240",26
+ ereig "SGLSCH220 - Fault fan contactor K220",20
+ ereig "SGLSCH222 - Fault fan contactor K222",22
+ ereig "SGLSCH223 - Fault fan contactor K223",23
+ ereig "SGLSCH241 - Fault fan contactor K241",31
+ ereig "SGLSCH242 - Fault fan contactor K242",32
+ ereig "SGTANI330 - Fault intake temp. B330",11
+ ereig "SGTAUI310 - Fault exhaust sensor B310",12
+ ereig "SGTFRI1 - Fault room temperature sensor 1 external",16
+ ereig "SGTFRI2 - Fault room temperature sensor 2 external",17
+ ereig "SGTSCH220 - Fault overtemperature transformer 220",19
+ ereig "SGTUMI385 - Fault circulating air temperature B385",15
+ ereig "SGTVDI371 - Fault evaporator temperature B371",13
+ ereig "SGTVDI372 - Fault evaporator temperature B372",14
+ ereig "SGVDEIS - Fault icing",37
+ ereig "Temperature sensor URH defective",40
+
+ var "Zykluszähler",NUM,WORD,0,$FFFF,"",1,0,65535,0,0
+ help "Cycle counter of fastest task"
+ var "Adr_Div0",HEX,DWORD,2,$FFFFFFFF,"km",1,0,$FFFFFFFF,0,0
+ help "Address (offset) division command for error: Div. by zero"
+
+ ;Zusatzinfos des Projekts
+ var "ACFRG",LOG,BYTE,120,$01
+ help ""
+ var "ACFRG290",LOG,BYTE,89,$01
+ help "Phase monitoring L1 OK"
+ var "ACFRGVZ",LOG,BYTE,121,$01
+ help ""
+ var "ACFRG_C",LOG,BYTE,193,$01
+ help ""
+ var "BAUTO",LOG,BYTE,128,$01
+ help ""
+ var "BFRG",LOG,BYTE,123,$01
+ help ""
+ var "BKUEHL",LOG,BYTE,135,$01
+ help ""
+ var "BKUEHLA",LOG,BYTE,132,$01
+ help ""
+ var "BKUEHLE",LOG,BYTE,134,$01
+ help ""
+ var "BLUEFT",LOG,BYTE,136,$01
+ help ""
+ var "BLUEFTA",LOG,BYTE,133,$01
+ help ""
+ var "BLUEFTE",LOG,BYTE,131,$01
+ help ""
+ var "BNU_HALTEN",LOG,BYTE,125,$01
+ help ""
+ var "BSTANDBY",LOG,BYTE,127,$01
+ help ""
+ var "BUS_OFF",LOG,BYTE,185,$01
+ help ""
+ var "CANF",LOG,BYTE,163,$01
+ help ""
+ var "CAUS",LOG,BYTE,165,$01
+ help ""
+ var "CMSCH370",LOG,BYTE,102,$01
+ help ""
+ var "COPBOFF",LOG,BYTE,7,$01
+ help "CANOpen bus participant offline"
+ var "COPWARN",LOG,BYTE,6,$01
+ help "CANOpen warning level reached"
+ var "CSCHA270",LOG,BYTE,115,$01
+ help ""
+ var "CSCHA_1",LOG,BYTE,169,$01
+ help ""
+ var "CSCHR270",LOG,BYTE,104,$01
+ help ""
+ var "CSPZAUS",LOG,BYTE,167,$01
+ help ""
+ var "CSPZEIN",LOG,BYTE,168,$01
+ help ""
+ var "CSPZYK",LOG,BYTE,166,$01
+ help ""
+ var "DRHD",LOG,BYTE,107,$01
+ help ""
+ var "DRHD_PD",LOG,BYTE,157,$01
+ help ""
+ var "DRHD_RED",LOG,BYTE,173,$01
+ help ""
+ var "DROK",LOG,BYTE,105,$01
+ help ""
+ var "DRSG",LOG,BYTE,106,$01
+ help ""
+ var "DRSG_PD",LOG,BYTE,162,$01
+ help ""
+ var "FFR",LOG,BYTE,124,$01
+ help ""
+ var "FKLF_C",LOG,BYTE,189,$01
+ help ""
+ var "FKLKU_C",LOG,BYTE,190,$01
+ help ""
+ var "FRITTHW",LOG,BYTE,116,$01
+ help ""
+ var "FVKLF_C",LOG,BYTE,191,$01
+ help ""
+ var "HD_CAUS",LOG,BYTE,174,$01
+ help ""
+ var "HD_LRED1",LOG,BYTE,175,$01
+ help ""
+ var "HD_LRED2",LOG,BYTE,176,$01
+ help ""
+ var "HD_LRED3",LOG,BYTE,177,$01
+ help ""
+ var "HGBYP",LOG,BYTE,113,$01
+ help ""
+ var "HGBYPANF",LOG,BYTE,164,$01
+ help ""
+ var "HGSPZAUS",LOG,BYTE,171,$01
+ help ""
+ var "HGSPZEIN",LOG,BYTE,172,$01
+ help ""
+ var "HGSPZYK",LOG,BYTE,170,$01
+ help ""
+ var "HKLAUS_C",LOG,BYTE,197,$01
+ help ""
+ var "HKLAUS_HW",LOG,BYTE,88,$01
+ help ""
+ var "INI_ZV",LOG,BYTE,122,$01
+ help ""
+ var "KBED",LOG,BYTE,156,$01
+ help ""
+ var "KR320",LOG,BYTE,92,$01
+ help ""
+ var "KR380",LOG,BYTE,93,$01
+ help ""
+ var "KUEHLSP",LOG,BYTE,129,$01
+ help ""
+ var "LAUS",LOG,BYTE,153,$01
+ help ""
+ var "LFKA",LOG,BYTE,142,$01
+ help ""
+ var "LIFESIGN_O",LOG,BYTE,186,$01
+ help ""
+ var "LMSCH220",LOG,BYTE,91,$01
+ help ""
+ var "LMSCH240",LOG,BYTE,99,$01
+ help "Feedback cond. fan motor contactor M240"
+ var "LSCHA220",LOG,BYTE,108,$01
+ help ""
+ var "LSCHA222",LOG,BYTE,109,$01
+ help ""
+ var "LSCHA223",LOG,BYTE,110,$01
+ help ""
+ var "LSCHA241",LOG,BYTE,111,$01
+ help ""
+ var "LSCHA242",LOG,BYTE,112,$01
+ help ""
+ var "LSCHR220",LOG,BYTE,95,$01
+ help ""
+ var "LSCHR222",LOG,BYTE,96,$01
+ help ""
+ var "LSCHR223",LOG,BYTE,97,$01
+ help ""
+ var "LSCHR22X",LOG,BYTE,150,$01
+ help ""
+ var "LSCHR241",LOG,BYTE,100,$01
+ help ""
+ var "LSCHR242",LOG,BYTE,101,$01
+ help ""
+ var "LST1",LOG,BYTE,147,$01
+ help "1st fan stage"
+ var "LST1_AUTO",LOG,BYTE,144,$01
+ help "Fan stage 1 in automatic mode"
+ var "LST2",LOG,BYTE,148,$01
+ help "2nd fan stage"
+ var "LST2_AUTO",LOG,BYTE,145,$01
+ help "Fan stage 2 in automatic mode"
+ var "LST3",LOG,BYTE,149,$01
+ help "3rd fan stage"
+ var "LST3_AUTO",LOG,BYTE,146,$01
+ help "Fan stage 3 in automatic mode"
+ var "LUEFTSP",LOG,BYTE,130,$01
+ help ""
+ var "M321_LAUF",LOG,BYTE,182,$01
+ help ""
+ var "M322_LAUF",LOG,BYTE,183,$01
+ help ""
+ var "MFREIW01",LOG,BYTE,184,$01
+ help ""
+ var "MISCHLST1",LOG,BYTE,179,$01
+ help ""
+ var "MISCHLST2",LOG,BYTE,180,$01
+ help ""
+ var "MISCHLST3",LOG,BYTE,181,$01
+ help ""
+ var "MVA",LOG,BYTE,114,$01
+ help ""
+ var "ONTx_C",LOG,BYTE,187,$01
+ help ""
+ var "ONTy_C",LOG,BYTE,188,$01
+ help ""
+ var "PRUFFELD",LOG,BYTE,119,$01
+ help ""
+ var "PUMPDOWN",LOG,BYTE,158,$01
+ help ""
+ var "REGIAKT",LOG,BYTE,139,$01
+ help ""
+ var "REGIRES",LOG,BYTE,137,$01
+ help ""
+ var "RF220",LOG,BYTE,94,$01
+ help "Feedback circuit breaker F220 "
+ var "RF240",LOG,BYTE,98,$01
+ help "Feedback circuit breaker F240 "
+ var "RF270",LOG,BYTE,103,$01
+ help "Feedback circuit breaker F270 "
+ var "SABS_C",LOG,BYTE,198,$01
+ help ""
+ var "SDRHD",LOG,BYTE,155,$01
+ help ""
+ var "SDRSG",LOG,BYTE,161,$01
+ help ""
+ var "SFKA",LOG,BYTE,143,$01
+ help ""
+ var "SLMSCH220",LOG,BYTE,151,$01
+ help ""
+ var "SLMSCH240",LOG,BYTE,154,$01
+ help ""
+ var "SPKTANI",LOG,BYTE,159,$01
+ help ""
+ var "STOPDOWNI",LOG,BYTE,138,$01
+ help ""
+ var "STOPUPI",LOG,BYTE,140,$01
+ help ""
+ var "STSCH220",LOG,BYTE,152,$01
+ help ""
+ var "TANIOK",LOG,BYTE,141,$01
+ help ""
+ var "TESTKL",LOG,BYTE,117,$01
+ help ""
+ var "TESTKL_C",LOG,BYTE,196,$01
+ help ""
+ var "TESTLF",LOG,BYTE,118,$01
+ help ""
+ var "TSCH220",LOG,BYTE,90,$01
+ help ""
+ var "TZO_C",LOG,BYTE,195,$01
+ help ""
+ var "UML",LOG,BYTE,178,$01
+ help ""
+ var "VDEIS",LOG,BYTE,160,$01
+ help ""
+ var "VKAUSKLF_C",LOG,BYTE,192,$01
+ help ""
+ var "VORL",LOG,BYTE,126,$01
+ help ""
+ var "WASCH_C",LOG,BYTE,194,$01
+ help ""
+ var "BELAD_C",VNUM,DWORD,80,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "KPRM321",VNUM,DWORD,36,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "KPRM322",VNUM,DWORD,40,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "KPSW321",VNUM,DWORD,48,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "KPSW322",VNUM,DWORD,52,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "PHDI340",VNUM,DWORD,44,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TANI330",VNUM,DWORD,32,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TANI_MW",VNUM,DWORD,64,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TANIx_C",VNUM,DWORD,72,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TANIy_C",VNUM,DWORD,76,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TAUI310",VNUM,DWORD,8,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TAUS",VNUM,DWORD,68,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TDVKL_C",VNUM,DWORD,84,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TFRI1",VNUM,DWORD,12,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TFRI2",VNUM,DWORD,16,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TFRI_MW",VNUM,DWORD,56,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TFRS",VNUM,DWORD,60,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TUMI385",VNUM,DWORD,20,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TVDI371",VNUM,DWORD,24,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+ var "TVDI372",VNUM,DWORD,28,$FFFFFFFF,"",1.5258789063e-005,-32767.00000,32767.00000,4,0
+ help ""
+
+END_SEG
+
+BDA_SEG
+ bdtdata 1000,172
+ bdtwrite 1000,0
+ bdtdel 1000,0
+
+ ;Projektbetriebsdaten
+ bdatgroup "Hours of operation"
+  bdt "Mode: Automatic",NUM,DWORD,12,"h",2.7777770000000002e-004,11,2,0
+  bdt "Mode: Standby",NUM,DWORD,8,"h",2.7777770000000002e-004,11,2,0
+  bdt "Mode: Test mode",NUM,DWORD,16,"h",2.7777770000000002e-004,11,2,0
+  bdt "Operating function: Cooling",NUM,DWORD,24,"h",2.7777770000000002e-004,11,2,0
+  bdt "Operating function: Ventilation",NUM,DWORD,20,"h",2.7777770000000002e-004,11,2,0
+  bdt "Hot gas bypass_",NUM,DWORD,60,"h",2.7777770000000002e-004,11,2,0
+  bdt "Flap position mixed air 1",NUM,DWORD,76,"h",2.7777770000000002e-004,11,2,0
+  bdt "Flap position mixed air 2",NUM,DWORD,80,"h",2.7777770000000002e-004,11,2,0
+  bdt "Flap position mixed air 3",NUM,DWORD,84,"h",2.7777770000000002e-004,11,2,0
+  bdt "Flap position circulating air",NUM,DWORD,88,"h",2.7777770000000002e-004,11,2,0
+  bdt "Cond. fan M240",NUM,DWORD,72,"h",2.7777770000000002e-004,11,2,0
+  bdt "Compressor M270",NUM,DWORD,48,"h",2.7777770000000002e-004,11,2,0
+  bdt "Air supply fan M220",NUM,DWORD,40,"h",2.7777770000000002e-004,11,2,0
+ bdatgroup "Histogram URH temperature"
+  bdt "-10°C < URHTemp <= 10°C",NUM,DWORD,144,"h",2.7777770000000002e-004,11,2,0
+  bdt "-55°C < URHTemp <= -10°C",NUM,DWORD,140,"h",2.7777770000000002e-004,11,2,0
+  bdt "10°C < URHTemp <= 25°C",NUM,DWORD,148,"h",2.7777770000000002e-004,11,2,0
+  bdt "25°C < URHTemp <= 40°C",NUM,DWORD,152,"h",2.7777770000000002e-004,11,2,0
+  bdt "40°C < URHTemp <= 55°C",NUM,DWORD,156,"h",2.7777770000000002e-004,11,2,0
+  bdt "55°C < URHTemp <= 70°C",NUM,DWORD,160,"h",2.7777770000000002e-004,11,2,0
+  bdt "70°C < URHTemp <= 85°C",NUM,DWORD,164,"h",2.7777770000000002e-004,11,2,0
+  bdt "85°C < URHTemp <= 155°C",NUM,DWORD,168,"h",2.7777770000000002e-004,11,2,0
+  bdt "Sensor defective",NUM,DWORD,136,"h",2.7777770000000002e-004,11,2,0
+ bdatgroup "Histogram supply voltage"
+  bdt "16V < U24V <= 20V",NUM,DWORD,108,"h",2.7777770000000002e-004,11,2,0
+  bdt "20V < U24V <= 23V",NUM,DWORD,112,"h",2.7777770000000002e-004,11,2,0
+  bdt "23V < U24V <= 25V",NUM,DWORD,116,"h",2.7777770000000002e-004,11,2,0
+  bdt "25V < U24V <= 27V",NUM,DWORD,120,"h",2.7777770000000002e-004,11,2,0
+  bdt "27V < U24V <= 29V",NUM,DWORD,124,"h",2.7777770000000002e-004,11,2,0
+  bdt "29V < U24V <= 32V",NUM,DWORD,128,"h",2.7777770000000002e-004,11,2,0
+  bdt "U24V <= 16V",NUM,DWORD,104,"h",2.7777770000000002e-004,11,2,0
+  bdt "U24V > 32V",NUM,DWORD,132,"h",2.7777770000000002e-004,11,2,0
+ bdatgroup "Switching frequencies"
+  bdt "Hot gas bypass",NUM,DWORD,56,"",1.0000000000000000e+000,11,0,0
+  bdt "Flap run M321",NUM,DWORD,92,"",1.0000000000000000e+000,11,0,0
+  bdt "Flap run M322",NUM,DWORD,96,"",1.0000000000000000e+000,11,0,0
+  bdt "Fan contactor K220",NUM,DWORD,36,"",1.0000000000000000e+000,11,0,0
+  bdt "Fan contactor K222",NUM,DWORD,28,"",1.0000000000000000e+000,11,0,0
+  bdt "Fan contactor K223",NUM,DWORD,32,"",1.0000000000000000e+000,11,0,0
+  bdt "Fan contactor K241",NUM,DWORD,64,"",1.0000000000000000e+000,11,0,0
+  bdt "Fan contactor K242",NUM,DWORD,68,"",1.0000000000000000e+000,11,0,0
+  bdt "MEZ_NOK - Compressor lockout: minimum switch-on time was not observed",NUM,DWORD,4,"",1.0000000000000000e+000,11,0,0
+  bdt "Solenoid valve liquid line",NUM,DWORD,52,"",1.0000000000000000e+000,11,0,0
+  bdt "Power failure (400VAC/50Hz)",NUM,DWORD,100,"",1.0000000000000000e+000,11,0,0
+  bdt "Compressor contactor K270",NUM,DWORD,44,"",1.0000000000000000e+000,11,0,0
+END_SEG
+
+MAN_SEG
+ mandata 200,10
+ manwrite 200,10
+ mantab "Connector","Signal","SIMM"
+
+ mangroup "Used ports"
+  schalt $0010,"CPU:_FRITT","yFRITTHW","DO3_B05",1
+  help ""
+  schalt $0002,"LED:_GELB1","yLEDGELB1","DO3_B02",1
+  help ""
+  schalt $0001,"LED:_GRUEN1","yLEDGRUEN","DO3_B01",1
+  help ""
+  schalt $0080,"X1:22d","yLSCHA220","DO2_B08",0
+  help "Control fan contactor K220"
+  schalt $0040,"X1:22z","yPHDI340_V","DO2_B07",0
+  help "Control pressure transducers"
+  schalt $0008,"X1:26z","yCSCHA270_","DO2_B04",0
+  help "Control compressor contactor K270"
+  schalt $0004,"X1:28b","yLSCHA222","DO2_B03",0
+  help "Control fan contactor K222"
+  schalt $0002,"X1:30d","yLSCHA223","DO2_B02",0
+  help "Control fan contactor K223"
+  schalt $0001,"X1:30z","yCSCHA270","DO2_B01",0
+  help "Control compressor contactor K270"
+  schalt $0200,"X2:10d","yMVA","DO2_B10",0
+  help "Control solenoid valve liquid line Y1"
+  schalt $0100,"X2:10z","yHGBYP","DO2_B09",0
+  help "Control hot gas bypass Y5"
+  schalt $2000,"X2:4b ","yLSCHA242","DO2_B14",0
+  help "Control condenser fan contactor K242"
+  schalt $0800,"X2:6z ","yLSCHA241","DO2_B12",0
+  help "Control condenser fan contactor K241"
+
+ mangroup "Unused ports"
+  schalt $0080,"24V:ERW","","CANi_P2",1
+  help ""
+  schalt $0008,"LED:_GELB2","","DO3_B04",1
+  help ""
+  schalt $0004,"LED:_ROT1","","DO3_B03",1
+  help ""
+  schalt $0020,"MVB_RES:OUT","","CANi_P0",1
+  help ""
+  schalt $0020,"X1:24b","","DO2_B06",0
+  help ""
+  schalt $0010,"X1:26d","","DO2_B05",0
+  help ""
+  schalt $8000,"X2:2d ","","DO2_B16",0
+  help ""
+  schalt $4000,"X2:2z ","","DO2_B15",0
+  help ""
+  schalt $1000,"X2:6d ","","DO2_B13",0
+  help ""
+  schalt $0400,"X2:8b ","","DO2_B11",0
+  help ""
+END_SEG
