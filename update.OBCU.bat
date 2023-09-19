@@ -8,7 +8,6 @@ date /t
 set hora=%time:~0,2%:%time:~3,2%
 echo %hora%
 
-
 echo            MENU DE TAREFAS
 echo ===========================================
 echo * 1. Configuracao de IP                    *
@@ -19,7 +18,7 @@ echo * 5. Get Train Id                          *
 echo * 6. Close                                 *
 echo ===========================================
 echo                    AVISO
-echo AO ESCOLHER A OPCAO 2 E 3, ESPERE A OBCU REINICIAR.
+echo AO ESCOLHER A OPCAO 3 E 4, ESPERE A OBCU REINICIAR.
 echo ======================================================
 set /p opcao= Escolha uma opcao:
 echo ------------------------------------
