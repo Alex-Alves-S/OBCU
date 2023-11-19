@@ -15,7 +15,8 @@ echo * 2. Comunicacao OBCU                      *
 echo * 3. Update All                            *
 echo * 4. Set Train Id                          *
 echo * 5. Get Train Id                          *
-echo * 6. Close                                 *
+echo * 6. Atualizar horario obcu                *
+echo * 7. Close                                 *
 echo ===========================================
 echo                    AVISO
 echo AO ESCOLHER A OPCAO 3 E 4, ESPERE A OBCU REINICIAR.
@@ -28,6 +29,7 @@ if %opcao% equ 3 goto opcao3
 if %opcao% equ 4 goto opcao4
 if %opcao% equ 5 goto opcao5
 if %opcao% equ 6 goto opcao6
+if %opcao% equ 7 goto opcao7
 
 :opcao1
 cls
@@ -80,6 +82,17 @@ fab get-train-id
 pause
 goto menu
 
+
 :opcao6
+cls
+echo ================================
+echo *    ATUALIZAR-HORA-OBCU       *
+echo ================================
+cd C:/OBS_LOCAL_UPDATE
+fab uptime
+pause
+goto menu
+
+:opcao7
 cls
 exit
